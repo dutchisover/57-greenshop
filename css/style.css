@@ -1,6 +1,7 @@
 /* コンセプト */
 .concept__container {
 	display: flex;
+	justify-content: space-between;
 }
 
 .concept__info {
@@ -8,10 +9,19 @@
 }
 
 .concept__copy {
+	margin-top: 35px;
+	color: #6d7c6c;
+	font-weight: 600;
 	font-size: 24px;
-	color: #6D7C6C;
-	font-weight: 500;
-	line-height: 1.7;
+	line-height: 1.70833333;
+}
+
+.concept__text {
+	margin-top: 30px;
+	margin-bottom: 66px;
+	letter-spacing: .1em;
+	font-size: 15px;
+	line-height: 2;
 }
 
 .concept__photo {
