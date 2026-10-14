@@ -1,3 +1,19 @@
 .concept__container {
 	display: flex;
 }
+
+
+.concept__info {
+	width: 50%;
+}
+
+.concept__copy {
+	font-size: 24px;
+	color: #6D7C6C;
+	font-weight: 500;
+	line-height: 1.7;
+}
+
+.concept__photo {
+	width: 50%;
+}
