@@ -1,3 +1,10 @@
+/* 全ページ共通 */
+body {
+	font-family: "Noto Sans JP", sans-serif;
+	font-optical-sizing: auto;
+}
+
+/* 画像 */
 img {
 	width: 100%;
 	height: auto;
