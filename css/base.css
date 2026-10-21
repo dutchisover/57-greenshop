@@ -39,14 +39,15 @@ img {
 	flex-shrink: 0;
 }
 
-.header__nav {
+/* .header__nav {
 	width: 645px;
-}
+} */
 
 .header__list {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	column-gap: 60px;
 }
 
 .header__link {
