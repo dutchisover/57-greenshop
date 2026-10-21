@@ -62,7 +62,12 @@ img {
 	position: relative;
 	min-height: 320px;
 	color: #fff;
-	background: linear-gradient(rgba(31, 46, 35, .68), rgba(31, 46, 35, .68)), url("../image/image_contact.jpg") center / cover no-repeat;
+	/* background: linear-gradient(rgba(31, 46, 35, .68), rgba(31, 46, 35, .68)), url("../image/image_contact.jpg") center / cover no-repeat; */
+
+	background-image: url(../image/image_contact.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .contact__inner {
