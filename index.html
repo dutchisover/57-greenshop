@@ -15,7 +15,7 @@
 	<!-- Webフォント -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +25,10 @@
 			<a href="./index.html" class="header__logo">
 				<img src="./image/logo.png" alt="ヴァーダント・バイブス Verdant Vibes" width="240" height="48">
 			</a>
-			<nav class="header__nav" aria-label="メインナビゲーション">
+			<button class="header__menu" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+				<span></span><span></span><span></span>
+			</button>
+			<nav class="header__nav" id="global-nav" aria-label="メインナビゲーション">
 				<ul class="header__list">
 					<li><a href="#plants" class="header__link">お取り扱い商品</a></li>
 					<li><a href="#news" class="header__link">お知らせ</a></li>
@@ -39,11 +42,17 @@
 
 	<!-- メインビジュアル -->
 	<div class="mv">
-		<img src="./image/image_mv-top.jpg" alt="暮らしと心を彩る、素敵な植物との出会いの場。" width="2881" height="1440" class="mv__image">
+
+		<picture>
+			<source media="(max-width: 768px)" srcset="./image/image_mv-top-sp.jpg">
+
+			<img src="./image/image_mv-top.jpg" alt="暮らしと心を彩る、素敵な植物との出会いの場。" width="2881" height="1440" class="mv__image">
+		</picture>
+
 	</div>
 
 	<!-- コンセプト -->
-	<section class="concept section">
+	<section class="concept section" id="concept">
 
 		<div class="inner">
 
@@ -114,6 +123,26 @@
 			</div>
 		</div>
 	</footer>
+
+	<script>
+		const menuButton = document.querySelector('.header__menu');
+		const globalNav = document.querySelector('.header__nav');
+
+		menuButton.addEventListener('click', () => {
+			const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!isOpen));
+			menuButton.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
+			globalNav.classList.toggle('is-open', !isOpen);
+		});
+
+		globalNav.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => {
+				menuButton.setAttribute('aria-expanded', 'false');
+				menuButton.setAttribute('aria-label', 'メニューを開く');
+				globalNav.classList.remove('is-open');
+			});
+		});
+	</script>
 
 </body>
 
