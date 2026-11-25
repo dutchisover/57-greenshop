@@ -25,9 +25,7 @@
 			<a href="./index.html" class="header__logo">
 				<img src="./image/logo.png" alt="ヴァーダント・バイブス Verdant Vibes" width="240" height="48">
 			</a>
-			<button class="header__menu" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
-				<span></span><span></span><span></span>
-			</button>
+
 			<nav class="header__nav" id="global-nav" aria-label="メインナビゲーション">
 				<ul class="header__list">
 					<li><a href="#plants" class="header__link">お取り扱い商品</a></li>
@@ -124,25 +122,6 @@
 		</div>
 	</footer>
 
-	<script>
-		const menuButton = document.querySelector('.header__menu');
-		const globalNav = document.querySelector('.header__nav');
-
-		menuButton.addEventListener('click', () => {
-			const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-			menuButton.setAttribute('aria-expanded', String(!isOpen));
-			menuButton.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
-			globalNav.classList.toggle('is-open', !isOpen);
-		});
-
-		globalNav.querySelectorAll('a').forEach((link) => {
-			link.addEventListener('click', () => {
-				menuButton.setAttribute('aria-expanded', 'false');
-				menuButton.setAttribute('aria-label', 'メニューを開く');
-				globalNav.classList.remove('is-open');
-			});
-		});
-	</script>
 
 </body>
 
